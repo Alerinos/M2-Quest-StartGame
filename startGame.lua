@@ -2,16 +2,17 @@
 -- Server Atonis.pl
 -- Version 1.0
 -- Date 05.11.2019
+-- Github https://github.com/Alerinos
 
 quest startGame begin
 	state start begin
-		-- Podczas zalogowania się na serwer
+		-- When logging in to the server
 		when login begin
 		    if pc.getqf("first") == 0 and pc.get_level() == 1 and pc.get_exp() == 0 then
-    			pc.setqf("first", 1)	-- Zapis do MySQL
+    			pc.setqf("first", 1)	-- Write to MySQL
     			
     			local item = {
-    				['all'] = {	-- Przedmioty dla wszystkich
+    				['all'] = {	-- Items for everyone
     					{76004, 1},     -- Potki
     					{76021, 1},     -- Potki
     					{27208, 3},     -- Zielona średnia mikstura
@@ -29,8 +30,8 @@ quest startGame begin
     				-- 	{72701, "EQ"},     -- Buty wiatru
     				},
     				[1] = {                 -- Warrior
-    				    {15, 11205, 12205}, -- Założone
-    				    {3005}              -- Ekwipunek
+    				    {15, 11205, 12205}, -- Put on
+    				    {3005}              -- Equipment
     				},   				    
     				[2] = {                 -- Ninja
     				    {1005, 11405, 79503, 12345},    -- TODO: Kołczan 79503
